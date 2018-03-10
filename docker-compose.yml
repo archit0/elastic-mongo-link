@@ -1,0 +1,19 @@
+version: '3'
+services:
+
+  mongodb:
+    hostname: mongodb
+    image: mongo:3.0.6
+    entrypoint: [ "/usr/bin/mongod", "--replSet", "rs", "--journal", "--smallfiles", "--rest" ]
+    ports:
+      - "27017:27017"
+      - "28017:28017"
+
+
+  mongosetup:
+    image: mongo:3.0.6
+    links:
+      - mongodb:mongodb
+    volumes:
+      - ./scripts:/scripts
+    entrypoint: [ "bash", "/scripts/mongo_entry_point.sh" ]
