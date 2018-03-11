@@ -8,12 +8,33 @@ services:
     ports:
       - "27017:27017"
       - "28017:28017"
+    networks:
+      main:
+        aliases:
+          - elasticsearch
 
 
-  mongosetup:
+  elasticsearch:
+     build: ./dockerfile/elasticsearch1.7.3/     
+     entrypoint: ["/application/elasticsearch-1.7.3/bin/elasticsearch"]
+     ports:
+      - "9200:9200"
+      - "9300:9300"
+     links:
+      - mongodb:mongodb
+     networks:
+      main:
+        aliases:
+          - mongodb
+
+  setup:
     image: mongo:3.0.6
     links:
       - mongodb:mongodb
+      - elasticsearch:elasticsearch      
     volumes:
       - ./scripts:/scripts
-    entrypoint: [ "bash", "/scripts/mongo_entry_point.sh" ]
+    entrypoint: ["bash", "/scripts/mongo_entry_point.sh"]
+
+networks:
+  main:
