@@ -35,7 +35,11 @@ services:
     volumes:
       - ./scripts:/scripts
     entrypoint: ["bash", "/scripts/mongo_entry_point.sh"]
-    
+    networks:
+      main:
+        aliases:
+          - mongodb
+
 
 networks:
   main:
