@@ -70,14 +70,14 @@ Query index:
 * Elastic Search(1.7.3) Port: 9200: Log in 
 
 # Check Services
-MongoDB logs: 
+MongoDB: 
 ```bash 
 # Check logs
 docker-compose logs -f mongodb
 # Log in Mongodb
 docker-compose exec mongodb bash
 ```
-Elastic Search logs: 
+Elastic Search: 
 ```bash 
 # Check Logs
 docker-compose logs -f elasticsearch
