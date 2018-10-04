@@ -1,6 +1,5 @@
 version: '3'
 services:
-
   mongodb:
     hostname: mongodb
     image: mongo:3.0.6
@@ -12,8 +11,6 @@ services:
       main:
         aliases:
           - elasticsearch
-
-
   elasticsearch:
      build: ./dockerfile/elasticsearch1.7.3/     
      entrypoint: ["/application/elasticsearch-1.7.3/bin/elasticsearch"]
@@ -24,7 +21,6 @@ services:
       main:
         aliases:
           - mongodb
-
   setup:
     image: mongo:3.0.6
     links:
