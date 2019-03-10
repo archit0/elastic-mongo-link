@@ -1,4 +1,4 @@
-# Elastic Search and Mongodb River Docker
+# Elastic Search and Mongodb Link Docker
 Plugin using for connecting mongodb and elasticsearch : https://github.com/richardwilly98/elasticsearch-river-mongodb
 
 This project will help you to setup mongodb and elastic search quickly and helps you to sync mongodb collecitons with elasticsearch to perform your searches.
