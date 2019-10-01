@@ -4,7 +4,7 @@ Plugin using for connecting mongodb and elasticsearch : https://github.com/richa
 This project will help you to setup mongodb and elastic search quickly and helps you to sync mongodb collecitons with elasticsearch to perform your searches.
 # Running 
 ```bash 
-docker-compose  up -d
+docker-compose up -d
 ```
 
 # Connecting Mongodb Collection to ElasticSearch with river and Querying
